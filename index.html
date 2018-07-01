@@ -7,6 +7,17 @@
     <style>
       html {
         background-color: #d458d4;
+        color: white;
+        font-family: sans-serif;
+      }
+      a {
+        color: white;
+      }
+      a:visited {
+        color: white;
+      }
+      img {
+        margin: auto;
       }
       #content {
         width: 100%;
@@ -14,10 +25,28 @@
         margin: auto;
         display: block;
       }
-      img {
+      #subscribe-icons {
+        display: inline-flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+      }
+      .subscribe {
+        margin: 5px;
+        max-width: 30%;
+        min-width: 150px;
+        height: 50px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+      }
+      .subscribe img {
+        max-width: 100%;
+        max-height: 100%;
+      }
+      .full-width {
         width: 100%;
-        margin: auto;
-        display: block;
       }
     </style>
   </head>
@@ -25,8 +54,15 @@
   <body>
     
     <div id="content">
-        <img src="images/gormicon.jpg" id="icon"/>
-        <iframe id="multi_iframe" scrolling="no" allowfullscreen="" src="https://www.podbean.com/media/player/multi?playlist=http%3A%2F%2Fplaylist.podbean.com%2F2931613%2Fplaylist_multi.xml&vjs=1&kdsowie31j4k1jlf913=6c6fc575d1e4be4b89e087f0d2e215ada4292feb&size=240&share=1&fonts=Helvetica&auto=0&download=1&rtl=0&skin=13" width="100%" height="430" frameborder="0"></iframe>
+      <img src="images/gormicon.jpg" class="full-width"/>
+      <iframe id="multi_iframe" scrolling="no" allowfullscreen="" src="https://www.podbean.com/media/player/multi?playlist=http%3A%2F%2Fplaylist.podbean.com%2F2931613%2Fplaylist_multi.xml&vjs=1&kdsowie31j4k1jlf913=6c6fc575d1e4be4b89e087f0d2e215ada4292feb&size=240&share=1&fonts=Helvetica&auto=0&download=1&rtl=0&skin=13" width="100%" height="430" frameborder="0"></iframe>
+      <img src="images/gormsubscribe.png"class="full-width"/>
+      <div id="subscribe-icons">
+        <a href="https://itunes.apple.com/gb/podcast/gorm/id1390271500?mt=2" class="subscribe"><img src="images/itunes.png" /></a>
+        <a href="https://pca.st/Iku2" class="subscribe"><img src="images/pocketcasts.svg" /></a>
+        <a href="http://feed.gormpodcast.com/" class="subscribe"><img src="images/podbean.png" /></a>
+        <a href="http://feed.gormpodcast.com/feed.xml" class="subscribe rss"><img src="images/rss.svg" /></a>
+      </div>        
     </div>
   </body>
 </html>
