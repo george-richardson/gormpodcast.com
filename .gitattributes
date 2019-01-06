@@ -1,2 +1,2 @@
-images/** filter=lfs diff=lfs merge=lfs -text
-rpgs/** filter=lfs diff=lfs merge=lfs -text
+site/images/** filter=lfs diff=lfs merge=lfs -text
+site/rpgs/** filter=lfs diff=lfs merge=lfs -text
