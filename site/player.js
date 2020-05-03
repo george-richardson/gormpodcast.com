@@ -59,6 +59,14 @@ class Player {
     this.elements.podcastControlsAudio.ondurationchange = (event) => {
       this.elements.podcastControlsDuration.textContent = toHoursMinuteSeconds(this.elements.podcastControlsAudio.duration)
     }
+    this.elements.podcastControlsAudio.onended = (event) => {
+      if (self.playingEpisode.nextEpisode != null) {
+        self.playEpisode(self.playingEpisode.nextEpisode)
+      } else {
+        self.pause()
+        self.elements.podcastControlsAudio.currentTime = 0
+      }
+    }
     // Create feed and refresh once loaded.
     this.feed = new Feed(() => this.initialise())
   }
@@ -69,6 +77,7 @@ class Player {
     })
     this.selectEpisode(this.feed.episodes[0])
     this.playEpisode(this.feed.episodes[0], false)
+    this.elements.podcastSelectedEpisode.style.visibility = "visible"
   }
   playEpisode(episode, startNow = true) {
     let self = this

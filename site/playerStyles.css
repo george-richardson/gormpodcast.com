@@ -248,9 +248,10 @@ header>* {
 }
 
 #podcastSelectedEpisode {
-  max-width: 30%;
+  width: 30%;
   overflow-y: auto;
   padding: 5px;
+  visibility: hidden;
 }
 
 #podcastSelectedEpisodeImage {
@@ -298,11 +299,14 @@ header>* {
   background-color: var(--main-bg-color);
   max-width: 80%;
   margin: 5px;
+  border-radius: 0.5vh;
 }
 
 #podcastControlsProgressBar {
   height: 100%;
   background-color: var(--gorm-color);
+  width: 0%;
+  border-radius: 0.5vh;
 }
 
 #podcastControlsPlayPauseIcon {
