@@ -1,0 +1,45 @@
+---
+layout: default
+title: RPGs
+headincludes: rpgstyles.html
+---
+
+<div class="container">
+
+<div class="rpg">
+<h1>Deep in the Heart of Hexas</h1>
+<p>Out here in the old west, life is hard. The baking sun, the back-breaking work and the ever present threat of unspeakable slime-covered tentacle monsters mean that making a living here is tougher than most. Lucky for us townsfolk a helpful but slightly shadowy and demonic passerby has granted the residents of this here town the ability to protect themselves for the teeny tiny itsy bitsy cost of ownership of their immortal soul for all eternity. Well, there ain’t time to sit around yapping so come on there’s work to be done. </p>
+<iframe src="https://itch.io/embed/581556?linkback=true&amp;bg_color=121212&amp;fg_color=ffffff&amp;link_color=d458d4&amp;border_color=000000" width="552" height="167" frameborder="0"><a href="https://gormpodcast.itch.io/deep-in-the-heart-of-hexas">Deep in the Heart of Hexas by GORM Podcast</a></iframe>
+</div>
+
+<div class="rpg">
+<h1>Black Knights</h1>
+<p>Woe betide anyone who comes upon a Black Knight. The most belligerent and stupid of the knightly orders, they will stop at nothing to complete their quest... even if it costs them an arm and a leg.</p>
+<iframe src="https://itch.io/embed/573400?linkback=true&amp;bg_color=121212&amp;fg_color=ffffff&amp;link_color=d458d4&amp;border_color=000000" width="552" height="167" frameborder="0"><a href="https://gormpodcast.itch.io/blackknights">Black Knights by GORM Podcast</a></iframe>
+</div>
+
+<div class="rpg">
+<h1>Lambduh</h1>
+<p>Ah so this is it! You are now a graduate and it's your first day on the job at the National Erudite Research Department (NERD). Sure you never opened a textbook and cheated on your exams, but nobody ever actually needs the stuff they learn in school, right? Even then you picked up enough techno-babble to ace the interview so you sure sound like you know what you are talking about, and isn't that what the 'E' in NERD is all about? Maybe your luck will continue to hold and you won't be found out. I'm sure you'll just be making coffees anyway...</p>
+<iframe src="https://itch.io/embed/470014?linkback=true&amp;bg_color=121212&amp;fg_color=ffffff&amp;link_color=d458d4&amp;border_color=000000" width="552" height="167" frameborder="0"><a href="https://gormpodcast.itch.io/lambduh">Lambduh by GORM Podcast</a></iframe>
+</div>
+
+<div class="rpg">
+<h1>Pyramids</h1>
+<p>The Pharaoh is dead and has been entombed in his life's work: the Pyramid! Unfortunately for you, he needs souls to aid him in the afterlife. The Pyramid is a mystical place built to allow maximum alignment with the stars, you have heard rumour of strange happenings within its sloped walls. You awaken with a pounding headache deep within the complex. You must keep your wits about you and escape before Osiris can pass judgement on your souls.</p>
+<iframe src="https://itch.io/embed/446518?linkback=true&amp;bg_color=121212&amp;fg_color=ffffff&amp;link_color=d458d4&amp;border_color=000000" width="552" height="167" frameborder="0"><a href="https://gormpodcast.itch.io/lambduh">Lambduh by GORM Podcast</a></iframe>
+</div>
+
+<div class="rpg">
+<h1>Office Talk</h1>
+<p>Dynocorp makes everything. In the distant present of the year 2020 Dynocorp are the biggest company in the world, there is no industry they aren't a part of,there are almost no products or services that citizens can buy that aren't a part of the Dynocorp dynasty. <strong>You are an insignificant cog in the corporate machine.</strong></p>
+<iframe src="https://itch.io/embed/446534?linkback=true&amp;bg_color=121212&amp;fg_color=ffffff&amp;link_color=d458d4&amp;border_color=000000" width="552" height="167" frameborder="0"><a href="https://gormpodcast.itch.io/lambduh">Lambduh by GORM Podcast</a></iframe>
+</div>
+
+<div class="rpg">
+<h1>Law, Order and Sentencing</h1>
+<p>A buddy cop RPG for two players and a GM. You'll need your wits about you and a good ear for puns if you want to arrest the supervillain and save the day.</strong></p>
+<iframe src="https://itch.io/embed/446544?linkback=true&amp;bg_color=121212&amp;fg_color=ffffff&amp;link_color=d458d4&amp;border_color=000000" width="552" height="167" frameborder="0"><a href="https://gormpodcast.itch.io/lambduh">Lambduh by GORM Podcast</a></iframe>
+</div>
+
+<div class="container">
