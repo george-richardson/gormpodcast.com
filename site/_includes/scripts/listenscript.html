@@ -76,7 +76,7 @@
       this.feed.episodes.forEach(episode => {
         self.elements.podcastList.appendChild(episode.constructListItem(() => self.selectEpisode(episode), () => self.playEpisode(episode)))
       })
-      this.selectEpisode(this.feed.episodes[0])
+      this.selectEpisode(this.feed.episodes[0], true)
       this.playEpisode(this.feed.episodes[0], false)
       this.elements.podcastSelectedEpisode.style.visibility = "visible"
     }
@@ -118,7 +118,7 @@
       this.elements.podcastControlsPlayPath.style.visibility = "visible"
       this.elements.podcastControlsPausePath.style.visibility = "hidden"
     }
-    selectEpisode(episode) {
+    selectEpisode(episode, init = false) {
       var self = this
       if (this.selectedEpisode != null) {
         this.selectedEpisode.element.classList.remove("selected")
@@ -129,7 +129,7 @@
       this.elements.podcastSelectedEpisodeDescription.innerHTML = this.selectedEpisode.description
       this.elements.podcastSelectedEpisodeDate.textContent = this.selectedEpisode.date
       this.elements.podcastSelectedEpisodeImage.src = this.selectedEpisode.image
-      if (getComputedStyle(this.elements.podcastSelectedEpisode, null).display == "none") {
+      if (!init && getComputedStyle(this.elements.podcastSelectedEpisode, null).display == "none") {
         this.playEpisode(episode)
       }
       this.elements.podcastSelectedEpisodeDownload.href = this.selectedEpisode.media
