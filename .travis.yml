@@ -25,7 +25,7 @@ deploy:
       branch: master
     skip_cleanup: true
     script: 
-      - terraform init -input=false
+      - terraform init -input=false -backend-config="key=gormpodcast.com"
       - terraform apply -auto-approve -var "branch=master"
   - provider: s3
     on:
@@ -49,7 +49,7 @@ deploy:
       branch: develop
     skip_cleanup: true
     script: 
-      - terraform init -input=false
+      - terraform init -input=false -backend-config="key=develop.gormpodcast.com"
       - terraform apply -auto-approve -var "branch=develop"
   - provider: s3
     on:
@@ -60,3 +60,9 @@ deploy:
     skip_cleanup: true
     local_dir: site/_site
     region: eu-west-1
+  - provider: script
+    on:
+      branch: develop
+    skip_cleanup: true
+    script: 
+      - aws cloudfront create-invalidation --distribution-id E3GI0BV3TSHOZ4 --paths '/*'

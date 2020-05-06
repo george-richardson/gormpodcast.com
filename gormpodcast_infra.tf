@@ -1,7 +1,6 @@
 terraform {
   backend "s3" {
     bucket = "george-richardson-tfstate"
-    key    = "${local.site_name}"
     region = "eu-west-2"
   }
 }
