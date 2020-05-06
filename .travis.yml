@@ -1,15 +1,31 @@
 language: generic
 
+services:
+  - docker
+
 env:
   global:
     - PATH=$HOME/.local/bin:$PATH
 
+install:
+  - curl -fSL "https://releases.hashicorp.com/terraform/0.11.11/terraform_0.11.11_linux_amd64.zip" -o terraform.zip
+  - sudo unzip terraform.zip -d /opt/terraform
+  - sudo ln -s /opt/terraform/terraform /usr/bin/terraform
+  - rm -f terraform.zip
+  - pip install --user awscli
+
+script: 
+  - docker run -v "$(pwd)/site:/srv/jekyll" --rm jekyll/jekyll:4.0 sh -c "jekyll build || jekyll build"
+
 deploy:
+  # MASTER
   - provider: script
     on:
       branch: master
     skip_cleanup: true
-    script: "bash deploytf.sh"
+    script: 
+      - terraform init -input=false
+      - terraform apply -auto-approve -var "branch=master"
   - provider: s3
     on:
       branch: master
@@ -17,9 +33,29 @@ deploy:
     secret_access_key: $AWS_SECRET_ACCESS_KEY
     bucket: gormpodcast.com
     skip_cleanup: true
-    local_dir: site
+    local_dir: site/_site
     region: eu-west-1
+  - provider: script
+    on:
+      branch: master
+    skip_cleanup: true
+    script: 
+      - aws cloudfront create-invalidation --distribution-id E3P3YDLGBLT3T --paths '/*'
 
-after_script:
-  - pip install --user awscli
-  - aws cloudfront create-invalidation --distribution-id E3P3YDLGBLT3T --paths '/*' 
+    # DEVELOP
+  - provider: script
+    on:
+      branch: develop
+    skip_cleanup: true
+    script: 
+      - terraform init -input=false
+      - terraform apply -auto-approve -var "branch=develop"
+  - provider: s3
+    on:
+      branch: develop
+    access_key_id: $AWS_ACCESS_KEY_ID
+    secret_access_key: $AWS_SECRET_ACCESS_KEY
+    bucket: develop.gormpodcast.com
+    skip_cleanup: true
+    local_dir: site/_site
+    region: eu-west-1
