@@ -8,16 +8,15 @@ env:
     - PATH=$HOME/.local/bin:$PATH
 
 install:
-  - echo "$UID"
-  - ls -la
   - curl -fSL "https://releases.hashicorp.com/terraform/0.11.11/terraform_0.11.11_linux_amd64.zip" -o terraform.zip
   - sudo unzip terraform.zip -d /opt/terraform
   - sudo ln -s /opt/terraform/terraform /usr/bin/terraform
   - rm -f terraform.zip
   - pip install --user awscli
+  - chmod 777 . -R
 
 script: 
-  - docker run -v "$(pwd)/site:/srv/jekyll" -u "travis" --rm jekyll/jekyll:4.0 sh -c "jekyll build || jekyll build"
+  - docker run -v "$(pwd)/site:/srv/jekyll" -u "$UID" --rm jekyll/jekyll:4.0 sh -c "jekyll build || jekyll build"
 
 deploy:
   # MASTER
