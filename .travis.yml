@@ -16,7 +16,7 @@ install:
   - chmod 777 . -R
 
 script: 
-  - docker run -v "$(pwd)/site:/srv/jekyll" -u "$UID" --rm jekyll/jekyll:4.0 sh -c "jekyll build || jekyll build"
+  - docker run -v "$(pwd)/site:/srv/jekyll" --rm jekyll/jekyll:4.0 sh -c "jekyll build || jekyll build"
 
 deploy:
   # MASTER
