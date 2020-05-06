@@ -1,0 +1,219 @@
+<style>
+  .control,
+  input[type="submit"],
+  input[type="reset"] {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    outline: inherit;
+  }
+
+  .bigButton {
+    color: var(--selected-text-color);
+    border: 0;
+    padding: 1vmin;
+    font-size: 1.5em;
+    transition: 0.2s;
+    margin: 0.3vmin;
+    flex-grow: 1;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .bigButton:visited {
+    color: var(--selected-text-color);
+  }
+
+  .primary {
+    background-color: var(--gorm-color);
+  }
+
+  .bigButton:hover {
+    background-color: var(--gorm-color-secondary);
+  }
+
+  .secondary {
+    background-color: #543D54;
+  }
+
+  .buttonBar {
+    display: flex;
+    padding: 1vmin;
+  }
+
+  /* IDs */
+
+  body {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    flex-grow: 1;
+  }
+
+  /* Center Pane */
+
+  #container {
+    display: flex;
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: 0;
+    overflow: auto;
+    align-items: stretch;
+
+    min-height: 0;
+  }
+
+  #podcastListContainer {
+    flex-grow: 1;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    border-color: var(--main-border-color);
+    border-style: solid;
+    border-width: 0 var(--border-width) 0 0;
+  }
+
+  #podcastListContainer::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
+
+  #podcastList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border: 0;
+  }
+
+  #podcastList li {
+    display: flex;
+    line-height: 1.5rem;
+    padding: 10px 20px;
+    margin: 0;
+    border-bottom: 1px solid var(--secondary-border-color);
+    transition: 0.2s;
+    user-select: none;
+  }
+
+  #podcastList li:hover {
+    background-color: var(--secondary-bg-color);
+  }
+
+  #podcastList li.selected {
+    background-color: var(--secondary-bg-color);
+    color: var(--selected-text-color);
+  }
+
+  #podcastList li.playing {
+    color: var(--gorm-color);
+  }
+
+  .itemTitle {
+    flex-grow: 1;
+    overflow-x: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .itemDuration {
+    color: var(--secondary-border-color);
+    margin-left: 5vmin;
+  }
+
+  #podcastSelectedEpisode {
+    width: 30%;
+    overflow-y: auto;
+    padding: 5px;
+    visibility: hidden;
+  }
+
+  #podcastSelectedEpisodeImage {
+    max-width: 300px;
+    width: 100%;
+    background-color: var(--main-border-color);
+    padding: 2px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Controls */
+
+  .disabled {
+    opacity: 20%;
+  }
+
+  .podcastControlsIcon {
+    height: 20px;
+  }
+
+  .podcastControlsRow {
+    display: flex;
+    align-items: center;
+  }
+
+  #podcastControls {
+    background-color: var(--secondary-bg-color);
+    text-align: center;
+    padding: 1vh 0 3vh 0;
+    border-color: var(--main-border-color);
+    border-style: solid;
+    border-width: var(--border-width) 0 0 0;
+  }
+
+  #podcastControls button {
+    margin: 3px 20px 3px 20px;
+  }
+
+  #podcastControlsProgressContainer {
+    border: none;
+    height: 1vh;
+    flex-grow: 5;
+    background-color: var(--main-bg-color);
+    max-width: 80%;
+    margin: 5px;
+    border-radius: 0.5vh;
+  }
+
+  #podcastControlsProgressBar {
+    height: 100%;
+    background-color: var(--gorm-color);
+    width: 0%;
+    border-radius: 0.5vh;
+  }
+
+  #podcastControlsPlayPauseIcon {
+    height: 40px;
+  }
+
+  #podcastControls svg {
+    fill: var(--main-text-color);
+    transition: 0.2s;
+  }
+
+  #podcastControls svg:hover {
+    fill: var(--selected-text-color);
+  }
+
+  #podcastControlsPausePath {
+    visibility: hidden;
+  }
+
+  @media screen and (max-width: 1000px) {
+    #podcastMetaMenuButton {
+      display: block;
+    }
+  }
+</style>

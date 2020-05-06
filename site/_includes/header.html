@@ -1,0 +1,33 @@
+<header>
+  <div id="permaNav" class="fill">
+    {% include logo.html %}
+    <span class="fill"></span>
+    <svg id="podcastMetaMenuButton" viewBox="0 0 400 312" xmlns="http://www.w3.org/2000/svg" onclick="toggleMenu()">
+      <g id="podcastMetaMenuButtonCross">
+        <path
+          d="m16.035156 311.078125c-4.097656 0-8.195312-1.558594-11.308594-4.695313-6.25-6.25-6.25-16.382812 0-22.632812l279.0625-279.0625c6.25-6.25 16.382813-6.25 22.632813 0s6.25 16.382812 0 22.636719l-279.058594 279.058593c-3.136719 3.117188-7.234375 4.695313-11.328125 4.695313zm0 0" />
+        <path
+          d="m295.117188 311.078125c-4.097657 0-8.191407-1.558594-11.308594-4.695313l-279.082032-279.058593c-6.25-6.253907-6.25-16.386719 0-22.636719s16.382813-6.25 22.636719 0l279.058594 279.0625c6.25 6.25 6.25 16.382812 0 22.632812-3.136719 3.117188-7.230469 4.695313-11.304687 4.695313zm0 0" />
+      </g>
+      <g id="podcastMetaMenuButtonBurger">
+        <path
+          d="m368 154.667969h-352c-8.832031 0-16-7.167969-16-16s7.167969-16 16-16h352c8.832031 0 16 7.167969 16 16s-7.167969 16-16 16zm0 0" />
+        <path
+          d="m368 32h-352c-8.832031 0-16-7.167969-16-16s7.167969-16 16-16h352c8.832031 0 16 7.167969 16 16s-7.167969 16-16 16zm0 0" />
+        <path
+          d="m368 277.332031h-352c-8.832031 0-16-7.167969-16-16s7.167969-16 16-16h352c8.832031 0 16 7.167969 16 16s-7.167969 16-16 16zm0 0" />
+      </g>
+    </svg>
+  </div>
+  <div id="navbar">
+
+    {% assign default_paths = site.pages | map: "path" %}
+    {% assign page_paths = site.header_pages | default: default_paths %}
+    {% for path in page_paths %}
+    {% assign my_page = site.pages | where: "path", path | first %}
+    {% if my_page.title %}
+    <a href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
+    {% endif %}
+    {% endfor %}
+  </div>
+</header>

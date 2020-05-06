@@ -1,0 +1,155 @@
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
+
+  /* VARIABLES */
+  :root {
+    --main-bg-color: #121212;
+    --secondary-bg-color: #282828;
+    --main-text-color: #c2c2c2;
+    --selected-text-color: #ffffff;
+    --main-border-color: #000;
+    --secondary-border-color: #b3b3b3;
+
+    --gorm-color: #d458d4;
+    --gorm-color-secondary: #a543a5;
+
+    --border-width: 4px;
+  }
+
+  /* TAGS */
+  h1,
+  h2,
+  h3,
+  h4 {
+    color: var(--selected-text-color);
+  }
+
+  a {
+    color: var(--gorm-color);
+  }
+
+  a:visited {
+    color: var(--gorm-color-secondary);
+  }
+
+  body {
+    margin: 0;
+    color: var(--main-text-color);
+    background-color: var(--main-bg-color);
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  header {
+    background-color: var(--gorm-color);
+    color: var(--selected-text-color);
+    border-color: var(--main-border-color);
+    border-style: solid;
+    border-width: 0 0 var(--border-width) 0;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    flex-wrap: wrap;
+  }
+
+  header>* {
+    margin: 5px;
+  }
+
+  /* CLASSES */
+  .fill {
+    flex-grow: 10;
+  }
+
+  .spacer {
+    flex-grow: 1;
+  }
+
+  .tall {
+    height: 100%;
+  }
+
+  /* HEADER */
+
+  #permaNav {
+    display: flex;
+    align-items: center;
+    height: 8vh;
+    min-height: 4em;
+  }
+
+  #logo {
+    height: 100%;
+    width: auto;
+  }
+
+  #podcastMetaTagline {
+    text-align: center;
+    font-style: italic;
+    margin: 0 5vw 0 5vw;
+  }
+
+  #podcastMetaMenuButton {
+    float: right;
+    fill: var(--selected-text-color);
+    transition: 0.2s;
+    display: none;
+    height: 50%;
+    margin-right: 10px;
+  }
+
+  #podcastMetaMenuButtonCross {
+    visibility: hidden;
+  }
+
+  #navbar {
+    display: flex;
+    align-items: center;
+  }
+
+  #navbar a {
+    display: block;
+    flex-grow: 1;
+    background-color: var(--gorm-color-secondary);
+    margin: 0 0.5vw 0 0;
+    color: var(--selected-text-color);
+    text-align: center;
+    text-decoration: none;
+    padding: 1vh 1vw 1vh 1vw;
+    font-size: calc(1.5em + 1vmin);
+    line-height: calc(1.5em + 1vmin);
+  }
+
+  #navbar a:hover {
+    background-color: var(--main-bg-color);
+  }
+
+  @media screen and (max-width: 1000px) {
+
+    #header {
+      display: block;
+    }
+
+    #permaNav {
+      width: 100%;
+    }
+
+    #podcastSelectedEpisode,
+    #navbar {
+      display: none;
+      width: 100%;
+    }
+
+    #podcastMetaMenuButton {
+      display: block;
+    }
+
+    #navbar {
+      flex-wrap: wrap;
+    }
+
+    #navbar a {
+      width: 100%;
+      margin: 3px;
+    }
+  }
+</style>

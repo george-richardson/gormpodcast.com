@@ -1,9 +1,16 @@
 terraform {
   backend "s3" {
     bucket = "george-richardson-tfstate"
-    key    = "gormpodcast.com"
     region = "eu-west-2"
   }
+}
+
+variable "branch" {
+  type = "string"
+}
+
+locals {
+  site_name = "${var.branch == "master" ? "gormpodcast.com" : "develop.gormpodcast.com"}"
 }
 
 provider "aws" {
@@ -22,11 +29,11 @@ module "static_site" {
     aws.useast1 = "aws.useast1"
   }
 
-  name           = "gormpodcast.com"
+  name           = "${local.site_name}"
   hosted_zone_id = "Z3JAE0Z0155MJ8"
   region         = "eu-west-1"
 
   tags = {
-    website = "gormpodcast.com"
+    website = "${local.site_name}"
   }
 }

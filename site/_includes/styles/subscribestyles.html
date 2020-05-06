@@ -1,0 +1,46 @@
+<style>
+  .podserviceContainer {
+    margin: auto;
+    max-width: 45em;
+  }
+
+  .podserviceList {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .podservice {
+    background-color: var(--secondary-bg-color);
+    padding: 0.3em;
+    margin: 0.5em;
+    width: 15em;
+    transition: 0.2s;
+    flex-grow: 1;
+  }
+
+  .podservice:hover {
+    background-color: var(--main-border-color);
+  }
+
+  .podservice span {
+    font-size: 1.5em;
+    text-align: center;
+    width: 100%;
+  }
+
+  .podservice img {
+    height: 2em;
+    width: 2em;
+    margin: 0.5em;
+    object-fit: contain;
+  }
+
+  .podservice a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--selected-text-color);
+  }
+</style>

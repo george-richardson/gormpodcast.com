@@ -1,0 +1,16 @@
+<script>
+  function toggleMenu() {
+    let navbar = document.getElementById("navbar")
+    let cross = document.getElementById("podcastMetaMenuButtonCross")
+    let burger = document.getElementById("podcastMetaMenuButtonBurger")
+    if (getComputedStyle(navbar, null).display == "none") {
+      navbar.style.display = "flex"
+      cross.style.visibility = "visible"
+      burger.style.visibility = "hidden"
+    } else {
+      navbar.style.display = null
+      cross.style.visibility = "hidden"
+      burger.style.visibility = "visible"
+    }
+  }
+</script>
