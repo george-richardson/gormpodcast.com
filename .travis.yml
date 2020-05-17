@@ -17,6 +17,7 @@ install:
 
 script: 
   - docker run -v "$(pwd)/site:/srv/jekyll" --rm jekyll/jekyll:4.0 sh -c "jekyll build || jekyll build"
+  - find _site/ -type f ! -iname 'index.html' -iname '*.html' -print0 | while read -d $'\0' f; do mv "$f" "${f%.html}"; done
 
 deploy:
   # MASTER
